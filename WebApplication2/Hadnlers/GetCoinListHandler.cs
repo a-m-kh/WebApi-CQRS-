@@ -18,6 +18,7 @@ namespace WebApplication2.Hadnlers
         }
         public async Task<ApiResponse> Handle(GetCoinListQuery request, CancellationToken cancellationToken)
         {
+            Console.WriteLine("1");
             var Response = new ApiResponse();
             var status = await _coinRepository.SearchW(request.Id);
             if(!status)

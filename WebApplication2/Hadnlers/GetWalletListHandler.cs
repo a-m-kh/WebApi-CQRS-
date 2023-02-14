@@ -18,6 +18,8 @@ namespace WebApplication2.Hadnlers
         }
         public async Task<ApiResponse> Handle(GetWalletListQuery request, CancellationToken cancellationToken)
         {
+
+            Console.WriteLine("222");
             var Response = new ApiResponse()
             {
                 Result = await _walletRepository.Get()

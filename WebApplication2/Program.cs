@@ -4,6 +4,8 @@ using System.Reflection;
 using WebApplication2;
 using WebApplication2.Contract;
 using WebApplication2.Models;
+using WebApplication2.PipLines;
+using WebApplication2.Queries;
 using WebApplication2.Repository;
 /*using WebApplication2.Service;
 */
@@ -22,6 +24,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<ICoinRepository,CoinRepository>();
 builder.Services.AddScoped<IWalletRepository, WalletRepository>();
+builder.Services.AddScoped<IPipelineBehavior<GetWalletListQuery, ApiResponse>, ValidateGetWalletListBehavior>();
 /*builder.Services.AddScoped<ICoinService, CoinService>();
 builder.Services.AddScoped<IWalletService, WalletService>();*/
 builder.Services.AddScoped<ApiResponse>();
